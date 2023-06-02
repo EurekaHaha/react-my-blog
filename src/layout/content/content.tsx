@@ -7,7 +7,7 @@ import { Outlet } from 'react-router-dom';
 const Content = () => {
 
   return (
-      <Container className="content-container" maxWidth={'md'}>
+      <Container className="content-container" maxWidth={'xl'}>
         <Outlet />
       </Container>
   );

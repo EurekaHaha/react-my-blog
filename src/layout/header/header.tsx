@@ -3,7 +3,10 @@ import { AppBar, Container, Toolbar, Typography, Box } from '@mui/material';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import NaviMenu from '../../components/navi/menu/naviMenu';
 import './header.css';
-import { clickHeaderBtn, selectHeaderState } from '../../store/features/headerSlice';
+import {
+  clickHeaderBtn,
+  selectHeaderState,
+} from '../../store/features/headerSlice';
 
 // type HeaderProps = {
 // };
@@ -12,12 +15,23 @@ const Header = () => {
   const state = useAppSelector(selectHeaderState);
   const dispatch = useAppDispatch();
 
-  console.log('wzTest dis', {dispatch, state})
+  console.log('wzTest dis', { dispatch, state });
 
   return (
-    <AppBar color="primary" position="sticky">
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
+    <AppBar
+      sx={{
+        backgroundColor: '#d7d7d7',
+      }}
+      color="primary"
+      position="sticky"
+    >
+      <Container maxWidth={false}>
+        <Toolbar
+          sx={{
+            borderBottom: 1,
+            borderColor: 'divider',
+          }}
+        >
           {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
           <Typography
             variant="h6"
@@ -40,7 +54,12 @@ const Header = () => {
             className="navi-menu"
             sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}
           >
-            <NaviMenu btnClick={(clickData: number) => dispatch(clickHeaderBtn(clickData))} meunList={state.menuList}></NaviMenu>
+            <NaviMenu
+              btnClick={(clickData: number) =>
+                dispatch(clickHeaderBtn(clickData))
+              }
+              meunList={state.menuList}
+            ></NaviMenu>
           </Box>
           <Box sx={{ flexGrow: 0 }}>avatar</Box>
         </Toolbar>
