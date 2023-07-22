@@ -6,7 +6,7 @@ type naviMenuProps = {
   meunList: naviMenu[];
   btnClick: (clickData: number) => {
     payload: number;
-    type: 'header/clickHeaderBtn';
+    type: 'route/changeActive';
   };
 };
 

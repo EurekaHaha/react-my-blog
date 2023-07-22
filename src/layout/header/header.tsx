@@ -4,15 +4,15 @@ import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import NaviMenu from '../../components/navi/menu/naviMenu';
 import './header.css';
 import {
-  clickHeaderBtn,
-  selectHeaderState,
-} from '../../store/features/headerSlice';
+  changeActive,
+  selectRouteState,
+} from '../../store/features/routeSlice';
 
 // type HeaderProps = {
 // };
 
 const Header = () => {
-  const state = useAppSelector(selectHeaderState);
+  const state = useAppSelector(selectRouteState);
   const dispatch = useAppDispatch();
 
   console.log('wzTest dis', { dispatch, state });
@@ -56,7 +56,7 @@ const Header = () => {
           >
             <NaviMenu
               btnClick={(clickData: number) =>
-                dispatch(clickHeaderBtn(clickData))
+                dispatch(changeActive(clickData))
               }
               meunList={state.menuList}
             ></NaviMenu>

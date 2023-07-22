@@ -1,8 +1,11 @@
-import headerSliceReducer from './features/headerSlice';
+import homePageSliceReducer from './features/homePageSlice';
+import routeSliceReducer from './features/routeSlice';
 
 export const reducer = {
   reducer: {
-    headerSliceReducer,
+    // headerSliceReducer,
+    homePageSliceReducer,
+    routeSliceReducer
   },
 };
 
